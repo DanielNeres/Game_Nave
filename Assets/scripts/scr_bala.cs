@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class scr_bala : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float velocidade;
+
     void Start()
     {
         
@@ -13,6 +14,6 @@ public class scr_bala : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(Vector3.right * velocidade * Time.deltaTime);
     }
 }

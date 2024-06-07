@@ -7,6 +7,7 @@ public class NewBehaviourScript : MonoBehaviour
     public float velocidade, velocidade_rotacao;
     public Animator animacao;
     private Camera cam;
+    public GameObject bala;
 
     void Start(){
         cam = Camera.main;
@@ -49,7 +50,7 @@ public class NewBehaviourScript : MonoBehaviour
             animacao.SetBool("andando", false);
         }
         if(Input.GetKeyDown(KeyCode.Space)){
-
+            Instantiate(bala, transform.position, transform.rotation);
         }
     }
 
