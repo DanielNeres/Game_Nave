@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class scr_bala : MonoBehaviour
 {
-    public float velocidade;
+    public float velocidade, dano;
     private Camera cam;
 
     void Start()
@@ -19,7 +19,7 @@ public class scr_bala : MonoBehaviour
 
         float tamanho_vertical = cam.orthographicSize;
         float tamanho_horizontal = tamanho_vertical * cam.aspect;
-        
+
         if (transform.position.x > tamanho_horizontal){
             Destroy(gameObject);
         }
@@ -32,6 +32,14 @@ public class scr_bala : MonoBehaviour
         }
         else if (transform.position.y < -tamanho_vertical){
             Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("meteoro"))
+        {
+            Debug.Log("Colisão com inimigo!");
         }
     }
 }
