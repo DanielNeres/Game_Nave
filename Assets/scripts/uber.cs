@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Uber : MonoBehaviour
 {
-    private float velocidade;
+    public float velocidade, vida;
     private float velocidade_rotacao;
     private int sinal;
     private Camera cam;
@@ -22,6 +22,10 @@ public class Uber : MonoBehaviour
 
     void Update()
     {
+
+        if (vida <= 0){
+            Destroy(gameObject);
+        }
 
         float tamanho_vertical = cam.orthographicSize;
         float tamanho_horizontal = tamanho_vertical * cam.aspect;
