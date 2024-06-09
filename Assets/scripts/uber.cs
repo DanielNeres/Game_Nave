@@ -22,6 +22,14 @@ public class Uber : MonoBehaviour
 
     void Update()
     {
+        switch (velocidade){
+            case 1:
+
+            break;
+            default:
+            
+            break;
+        }
 
         if (vida <= 0){
             Destroy(gameObject);
