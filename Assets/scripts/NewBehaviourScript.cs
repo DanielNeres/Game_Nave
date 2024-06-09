@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
@@ -8,7 +9,8 @@ public class NewBehaviourScript : MonoBehaviour
     public Animator animacao;
     private Camera cam;
     public GameObject bala;
-    private GameObject canva;
+    public GameObject canva;
+    public GameObject[] meteoros_medios;
 
     void Start(){
         cam = Camera.main;
@@ -17,6 +19,7 @@ public class NewBehaviourScript : MonoBehaviour
     }
 
     void Update(){
+
         float tamanho_vertical = cam.orthographicSize;
         float tamanho_horizontal = tamanho_vertical * cam.aspect;
         Vector3 nova_posicao = transform.position;
@@ -62,6 +65,10 @@ public class NewBehaviourScript : MonoBehaviour
         if (other.gameObject.CompareTag("meteoro"))
         {
             vida -= other.GetComponent<Uber>().dano;
+        }
+        if (vida <= 0){
+            canva.SetActive(true);
+            Destroy(gameObject);
         }
     }
 }
