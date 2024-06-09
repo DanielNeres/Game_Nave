@@ -41,6 +41,7 @@ public class scr_bala : MonoBehaviour
         {
             Debug.Log("Colisão com inimigo!");
             other.GetComponent<Uber>().vida -= dano;
+            Destroy(gameObject);
 
         }
     }

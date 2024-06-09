@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    public float velocidade, velocidade_rotacao;
+    public float velocidade, velocidade_rotacao, taxa_de_tiro, tempo_de_espera;
     public Animator animacao;
     private Camera cam;
     public GameObject bala;
@@ -12,6 +12,7 @@ public class NewBehaviourScript : MonoBehaviour
     void Start(){
         cam = Camera.main;
         animacao = GetComponent<Animator>();
+        tempo_de_espera = 0;
     }
 
     void Update(){
@@ -49,7 +50,8 @@ public class NewBehaviourScript : MonoBehaviour
         } else{
             animacao.SetBool("andando", false);
         }
-        if(Input.GetKeyDown(KeyCode.Space)){
+        if(Input.GetKeyDown(KeyCode.Space) && Time.time > tempo_de_espera){
+            tempo_de_espera = Time.time + taxa_de_tiro;
             Instantiate(bala, transform.position, transform.rotation);
         }
     }
