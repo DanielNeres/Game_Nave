@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    public float velocidade, velocidade_rotacao, taxa_de_tiro, tempo_de_espera;
+    public float velocidade, velocidade_rotacao, taxa_de_tiro, tempo_de_espera, vida;
     public Animator animacao;
     private Camera cam;
     public GameObject bala;
+    private GameObject canva;
 
     void Start(){
         cam = Camera.main;
@@ -60,7 +61,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("meteoro"))
         {
-            Debug.Log("Colisão com inimigo!");
+            vida -= other.GetComponent<Uber>().dano;
         }
     }
 }
