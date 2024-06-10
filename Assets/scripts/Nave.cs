@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class Nave : MonoBehaviour
 {
     public float velocidade, velocidade_rotacao, taxa_de_tiro, tempo_de_espera, vida;
     public Animator animacao;
@@ -64,7 +64,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("meteoro"))
         {
-            vida -= other.GetComponent<Uber>().dano;
+            vida -= other.GetComponent<scr_meteoro_M>().dano;
         }
         if (vida <= 0){
             canva.SetActive(true);

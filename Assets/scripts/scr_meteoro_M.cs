@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Uber : MonoBehaviour
+public class scr_meteoro_M : MonoBehaviour
 {
     public float velocidade, vida, dano;
     private float velocidade_rotacao;
