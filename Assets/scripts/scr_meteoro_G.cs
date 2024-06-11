@@ -14,7 +14,6 @@ public class scr_meteoro_G : MonoBehaviour
     void Start()
     {
         velocidade_rotacao = Random.Range(30f, 40f);
-        velocidade = 2.3f;
         direcao = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), transform.position.z).normalized;
         sinal = Random.Range(0, 2) == 0 ? -1 : 1;
         cam = Camera.main;

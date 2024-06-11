@@ -60,11 +60,10 @@ public class Nave : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("meteoro"))
-        {
-            vida -= other.GetComponent<scr_meteoro_M>().dano;
+    private void OnTriggerEnter2D(Collider2D other){
+        
+        if (other.gameObject.CompareTag("meteoro")){
+            vida -= other.GetComponent<scr_meteoro_G>().dano;
         }
         if (vida <= 0){
             canva.SetActive(true);
