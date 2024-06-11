@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class teste_personagem : MonoBehaviour
@@ -45,6 +47,26 @@ public class teste_personagem : MonoBehaviour
 
     }
 
+    private Vector3 objeto_mais_proximo()
+    {
+        Vector3 posicao_mais_poxima = Vector3.zero;
+        GameObject[] objetos = GameObject.FindGameObjectsWithTag("apoio");
+        float menorDistancia = Mathf.Infinity;
+        if (objetos != null){
+            foreach (GameObject objeto in objetos){
+                float distancia = Vector3.Distance(gameObject.transform.position, objeto.transform.position);
+                if (distancia < menorDistancia){
+                    menorDistancia = distancia;
+                    posicao_mais_poxima = objeto.transform.position;
+                }
+            }
+        } else if (objetos == null){
+            return gameObject.transform.position;
+        }
+        return posicao_mais_poxima;
+    }
+
+
     private void OnCollisionEnter2D(Collision2D collision){
         if (collision.gameObject.CompareTag("chao"))
         {
@@ -57,4 +79,7 @@ public class teste_personagem : MonoBehaviour
             gancho = false;
         }
     }
+
 }
+
+
