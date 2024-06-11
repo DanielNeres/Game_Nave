@@ -36,13 +36,16 @@ public class teste_personagem : MonoBehaviour
 
             if (!estar_no_chao){
                 if (Input.GetKeyDown("f")){
-                    posicao_apoio = GameObject.FindGameObjectWithTag("apoio").transform.position;
+                    posicao_apoio = objeto_mais_proximo();
                     Debug.Log("quadrado a x = " + posicao_apoio.x + " e y = " + posicao_apoio.y);
-                    gancho = true;
+                    if(posicao_apoio != transform.position){
+                        gancho = true;
+                    }
                 }
             }
         }else{
             transform.position = Vector3.MoveTowards(transform.position, posicao_apoio, velocidade_gancho * Time.deltaTime);
+            rigidi_personagem.gravityScale = 0.3f;
         }
 
     }
@@ -72,11 +75,10 @@ public class teste_personagem : MonoBehaviour
         {
             estar_no_chao = true;
         }
-    }
-    private void OnTriggerEnter2D(Collider2D collision){
         if (collision.gameObject.CompareTag("apoio"))
         {
             gancho = false;
+            rigidi_personagem.gravityScale = 1;
         }
     }
 
