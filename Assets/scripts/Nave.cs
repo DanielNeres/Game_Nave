@@ -11,6 +11,7 @@ public class Nave : MonoBehaviour
     public GameObject bala;
     public GameObject canva;
     public GameObject[] meteoros_medios;
+    public GameObject Meteoro_base = this;
 
     void Start(){
         cam = Camera.main;
