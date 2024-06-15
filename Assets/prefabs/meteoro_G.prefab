@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7849843793361265771}
   - component: {fileID: 1777439276526254985}
   - component: {fileID: 2471112481248687787}
-  - component: {fileID: 4748969671984521607}
+  - component: {fileID: 9054567308338830454}
   m_Layer: 0
   m_Name: meteoro_G
   m_TagString: meteoro
@@ -149,7 +149,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4748969671984521607
+--- !u!114 &9054567308338830454
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,6 +161,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2ca65cee76812b439fea9c40de5a040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidade: 1
-  vida: 4
-  dano: 1

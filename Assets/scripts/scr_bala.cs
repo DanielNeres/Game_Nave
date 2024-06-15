@@ -40,7 +40,7 @@ public class scr_bala : MonoBehaviour
         if (other.gameObject.CompareTag("meteoro"))
         {
             Debug.Log("Colisão com inimigo!");
-            other.GetComponent<scr_meteoro_G>().vida -= dano;
+            other.GetComponent<scr_meteoro_padrao>().vida -= dano;
             Destroy(gameObject);
         }
     }

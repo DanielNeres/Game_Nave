@@ -10,8 +10,6 @@ public class Nave : MonoBehaviour
     private Camera cam;
     public GameObject bala;
     public GameObject canva;
-    public GameObject[] meteoros_medios;
-    public GameObject Meteoro_base = this;
 
     void Start(){
         cam = Camera.main;
@@ -64,7 +62,7 @@ public class Nave : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other){
         
         if (other.gameObject.CompareTag("meteoro")){
-            vida -= other.GetComponent<scr_meteoro_G>().dano;
+            vida -= other.GetComponent<scr_meteoro_padrao>().dano;
         }
         if (vida <= 0){
             canva.SetActive(true);
