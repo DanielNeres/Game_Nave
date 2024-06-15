@@ -26,10 +26,7 @@ public class scr_meteoro_padrao : MonoBehaviour
 
     public void Estado_padrao()
     {
-        if (vida <= 0)
-        {
-            Destroy(gameObject);
-        }
+        
 
         float tamanho_vertical = cam.orthographicSize;
         float tamanho_horizontal = tamanho_vertical * cam.aspect;

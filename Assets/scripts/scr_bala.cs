@@ -35,13 +35,5 @@ public class scr_bala : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("meteoro"))
-        {
-            Debug.Log("Colisão com inimigo!");
-            other.GetComponent<scr_meteoro_padrao>().vida -= dano;
-            Destroy(gameObject);
-        }
-    }
+    
 }
