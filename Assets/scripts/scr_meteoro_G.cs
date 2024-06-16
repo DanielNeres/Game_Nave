@@ -28,6 +28,7 @@ public class scr_meteoro_G : MonoBehaviour
     void Update()
     {
         meteoro.Estado_padrao();
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -36,17 +37,17 @@ public class scr_meteoro_G : MonoBehaviour
         {
             Debug.Log("Colisão com inimigo!");
             meteoro.vida -= other.GetComponent<scr_bala>().dano;
-            Destroy(other.gameObject);
+            Destroy(other.gameObject);  
             if (meteoro.vida <= 0)
             {
-                Destroy(gameObject);
-                int indixe, contador = 1;
-                while (contador <= 3){
-                    indixe = Random.Range(1, 4);
-                    Instantiate(meteoros_medios[indixe], transform.position, transform.rotation);
-                    contador++;
+                int indice;
+                for (int contador = 0; contador < 3; contador++){
+                    indice = Random.Range(0, meteoros_medios.Length);
+                    Instantiate(meteoros_medios[indice], transform.position, transform.rotation);
                 }
+                Destroy(gameObject);
             }
         }
     }
+
 }
