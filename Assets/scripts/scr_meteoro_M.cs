@@ -6,6 +6,7 @@ public class scr_meteoro_M : MonoBehaviour
 {
     private scr_meteoro_padrao meteoro;
     public GameObject[] meteoros_pequenos;
+    public AudioSource audio_hit;
 
     void Start()
     {
@@ -35,6 +36,7 @@ public class scr_meteoro_M : MonoBehaviour
         if (other.gameObject.CompareTag("bala"))
         {
             Debug.Log("Colisão com inimigo!");
+            audio_hit.Play();
             meteoro.vida -= other.GetComponent<scr_bala>().dano;
             Destroy(other.gameObject);  
             if (meteoro.vida <= 0)

@@ -164,6 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidade: 6
   dano: 1
+  audio_hit: {fileID: 1796246004731373223}
 --- !u!82 &1796246004731373223
 AudioSource:
   m_ObjectHideFlags: 0
