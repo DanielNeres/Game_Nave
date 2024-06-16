@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class scr_meteoro_G : MonoBehaviour
+public class scr_meteoro_P : MonoBehaviour
 {
     private scr_meteoro_padrao meteoro;
-    public GameObject[] meteoros_medios;
 
     void Start()
     {
@@ -14,9 +13,9 @@ public class scr_meteoro_G : MonoBehaviour
         if (meteoro != null)
         {
             meteoro.Meteoro_padrao = gameObject;
-            meteoro.velocidade = 1;
+            meteoro.velocidade = 1.4f;
             meteoro.dano = 1;
-            meteoro.vida = 4;
+            meteoro.vida = 2;
             meteoro.Inicializar();
         }
         else
@@ -40,12 +39,6 @@ public class scr_meteoro_G : MonoBehaviour
             if (meteoro.vida <= 0)
             {
                 Destroy(gameObject);
-                int indixe, contador = 1;
-                while (contador <= 3){
-                    indixe = Random.Range(1, 4);
-                    Instantiate(meteoros_medios[indixe], transform.position, transform.rotation);
-                    contador++;
-                }
             }
         }
     }

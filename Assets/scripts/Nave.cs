@@ -10,6 +10,7 @@ public class Nave : MonoBehaviour
     private Camera cam;
     public GameObject bala;
     public GameObject canva;
+    public AudioSource audio_projetil;
 
     void Start(){
         cam = Camera.main;
@@ -56,6 +57,7 @@ public class Nave : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space) && Time.time > tempo_de_espera){
             tempo_de_espera = Time.time + taxa_de_tiro;
             Instantiate(bala, transform.position, transform.rotation);
+            audio_projetil.Play();
         }
     }
 

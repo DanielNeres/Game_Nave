@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5170367786319431062}
   - component: {fileID: 5637141155398749109}
   - component: {fileID: 6194251760106472949}
-  - component: {fileID: -7874411679247941154}
+  - component: {fileID: 5548058181874411689}
   m_Layer: 0
-  m_Name: meteoro_M_1
+  m_Name: meteoro_P_1
   m_TagString: meteoro
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 737dedd971fb2ec4f89871e15881815e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 246ced26b7a52b442a0b6193746c2b10, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -149,7 +149,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-7874411679247941154
+--- !u!114 &5548058181874411689
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,10 +158,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6835604604379742458}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0e9d69b49e8bda4fbf5e9be12d3378f, type: 3}
+  m_Script: {fileID: 11500000, guid: 790d8b320b9f10d44a7b4eda9abd948e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meteoros_pequenos:
-  - {fileID: 6835604604379742458, guid: be3f61447e05bae4f9a656cf29328f1d, type: 3}
-  - {fileID: 6835604604379742458, guid: 40955f230ccddf34383135930cba7fc1, type: 3}
-  - {fileID: 6835604604379742458, guid: 59f28814ec490814bbd3c28d5d0b9bdd, type: 3}
+  meteoros_pequenos: []
