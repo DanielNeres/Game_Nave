@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -8,15 +9,15 @@ public class Nave : MonoBehaviour
     public float velocidade, velocidade_rotacao, taxa_de_tiro, tempo_de_espera, vida;
     public Animator animacao;
     private Camera cam;
-    public GameObject bala;
-    public GameObject canva;
-    public AudioSource audio_projetil;
-    public AudioSource audio_hit;
+    public GameObject bala, canva, escudo;
+    public AudioSource audio_projetil, audio_hit;
+    public bool escudo_ativo;
 
     void Start(){
         cam = Camera.main;
         animacao = GetComponent<Animator>();
         tempo_de_espera = 0;
+        escudo_ativo = false;
     }
 
     void Update(){
@@ -66,11 +67,20 @@ public class Nave : MonoBehaviour
         
         if (other.gameObject.CompareTag("meteoro")){
             audio_hit.Play();
-            vida -= other.GetComponent<scr_meteoro_padrao>().dano;
+            if (escudo_ativo){
+                escudo_ativo = false;
+                escudo.GetComponent<SpriteRenderer>().enabled = false;
+            } else{
+                vida -= other.GetComponent<scr_meteoro_padrao>().dano;
+            }
+            if (vida <= 0){
+                canva.SetActive(true);
+                Destroy(gameObject);
+            }
         }
-        if (vida <= 0){
-            canva.SetActive(true);
-            Destroy(gameObject);
+        if (other.gameObject.CompareTag("escudo")){
+            escudo_ativo = true;
+            escudo.GetComponent<SpriteRenderer>().enabled = true;
         }
     }
 }
