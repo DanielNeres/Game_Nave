@@ -6,7 +6,7 @@ public class scr_meteoro_M : MonoBehaviour
 {
     private scr_meteoro_padrao meteoro;
     public GameObject[] meteoros_pequenos;
-    public AudioSource audio_hit;
+    public AudioSource audio_hit, audio_destruicao;
 
     void Start()
     {
@@ -41,12 +41,15 @@ public class scr_meteoro_M : MonoBehaviour
             Destroy(other.gameObject);  
             if (meteoro.vida <= 0)
             {
+                gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                gameObject.GetComponent<CircleCollider2D>().enabled = false;
+                audio_destruicao.Play();
                 int indice;
                 for (int contador = 0; contador < 3; contador++){
                     indice = Random.Range(0, meteoros_pequenos.Length);
                     Instantiate(meteoros_pequenos[indice], transform.position, transform.rotation);
                 }
-                Destroy(gameObject);
+                Destroy(gameObject, 0.5f);
             }
         }
     }

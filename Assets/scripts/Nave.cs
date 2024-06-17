@@ -11,6 +11,7 @@ public class Nave : MonoBehaviour
     public GameObject bala;
     public GameObject canva;
     public AudioSource audio_projetil;
+    public AudioSource audio_hit;
 
     void Start(){
         cam = Camera.main;
@@ -64,6 +65,7 @@ public class Nave : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other){
         
         if (other.gameObject.CompareTag("meteoro")){
+            audio_hit.Play();
             vida -= other.GetComponent<scr_meteoro_padrao>().dano;
         }
         if (vida <= 0){

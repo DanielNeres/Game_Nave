@@ -5,7 +5,7 @@ using UnityEngine;
 public class scr_meteoro_P : MonoBehaviour
 {
     private scr_meteoro_padrao meteoro;
-    public AudioSource audio_hit;
+    public AudioSource audio_hit, audio_destruicao;
 
     void Start()
     {
@@ -40,7 +40,10 @@ public class scr_meteoro_P : MonoBehaviour
             Destroy(other.gameObject);
             if (meteoro.vida <= 0)
             {
-                Destroy(gameObject);
+                gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                gameObject.GetComponent<CircleCollider2D>().enabled = false;
+                audio_destruicao.Play();
+                Destroy(gameObject, 0.5f);
             }
         }
     }
