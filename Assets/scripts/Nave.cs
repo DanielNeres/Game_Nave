@@ -7,10 +7,11 @@ using UnityEngine;
 public class Nave : MonoBehaviour
 {
     public float velocidade, velocidade_rotacao, taxa_de_tiro, tempo_de_espera, vida;
+    private float tamanho_vertical, tamanho_horizontal;
     public Animator animacao;
     private Camera cam;
     public GameObject bala, canva, escudo;
-    public AudioSource audio_projetil, audio_hit;
+    public AudioSource audio_projetil, audio_hit, audio_melhoria;
     public bool escudo_ativo;
 
     void Start(){
@@ -18,12 +19,11 @@ public class Nave : MonoBehaviour
         animacao = GetComponent<Animator>();
         tempo_de_espera = 0;
         escudo_ativo = false;
+        tamanho_vertical = cam.orthographicSize;
+        tamanho_horizontal = tamanho_vertical * cam.aspect;
     }
 
     void Update(){
-
-        float tamanho_vertical = cam.orthographicSize;
-        float tamanho_horizontal = tamanho_vertical * cam.aspect;
         Vector3 nova_posicao = transform.position;
 
         if (transform.position.x > tamanho_horizontal){
@@ -79,8 +79,10 @@ public class Nave : MonoBehaviour
             }
         }
         if (other.gameObject.CompareTag("escudo")){
+            audio_melhoria.Play();
             escudo_ativo = true;
             escudo.GetComponent<SpriteRenderer>().enabled = true;
+            Destroy(other.gameObject);
         }
     }
 }
