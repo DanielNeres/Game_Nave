@@ -6,7 +6,7 @@ public class game_controler : MonoBehaviour
 {
     private Camera cam;
     private float tamanho_vertical, tamanho_horizontal, timer, tempo_de_espera;
-    public GameObject melhorias;
+    public GameObject[] melhorias;
     void Start()
     {
         cam = Camera.main;
@@ -23,7 +23,8 @@ public class game_controler : MonoBehaviour
     {
         if (Time.time > timer){
             Vector3 posicao = new Vector3(Random.Range(-tamanho_horizontal, tamanho_horizontal), Random.Range(-tamanho_vertical, tamanho_vertical), 0);
-            Instantiate(melhorias, posicao, Quaternion.identity);
+            int index = Random.Range(0, 2);
+            Instantiate(melhorias[index], posicao, Quaternion.identity);
             timer += Random.Range(5f, 10f);
         }
         

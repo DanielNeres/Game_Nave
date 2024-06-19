@@ -9,6 +9,7 @@ TagManager:
   - apoio
   - bala
   - escudo
+  - melhoria_projetil
   layers:
   - Default
   - TransparentFX
