@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class game_controler : MonoBehaviour
 {
@@ -27,6 +28,11 @@ public class game_controler : MonoBehaviour
             Instantiate(melhorias[index], posicao, Quaternion.identity);
             timer += Random.Range(5f, 10f);
         }
+        
+    }
+
+    public void botao_reiniciar(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         
     }
 }
