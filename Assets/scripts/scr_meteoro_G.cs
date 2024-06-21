@@ -42,7 +42,7 @@ public class scr_meteoro_G : MonoBehaviour
             if (meteoro.vida <= 0)
             {
                 gameObject.GetComponent<SpriteRenderer>().enabled = false;
-                gameObject.GetComponent<CircleCollider2D>().enabled = false;
+                gameObject.GetComponent<PolygonCollider2D>().enabled = false;
                 audio_destruicao.Play();
                 int indice;
                 for (int contador = 0; contador < 3; contador++){

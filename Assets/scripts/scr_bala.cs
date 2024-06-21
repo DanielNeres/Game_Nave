@@ -5,20 +5,20 @@ using UnityEngine;
 public class scr_bala : MonoBehaviour
 {
     public float velocidade, dano;
+    private float tamanho_vertical, tamanho_horizontal;
     private Camera cam;
 
     void Start()
     {
         cam = Camera.main;
+        tamanho_vertical = cam.orthographicSize;
+        tamanho_horizontal = tamanho_vertical * cam.aspect;
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.Translate(Vector3.right * velocidade * Time.deltaTime);
-
-        float tamanho_vertical = cam.orthographicSize;
-        float tamanho_horizontal = tamanho_vertical * cam.aspect;
 
         if (transform.position.x > tamanho_horizontal){
             Destroy(gameObject);

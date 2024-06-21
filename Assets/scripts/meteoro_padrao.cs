@@ -5,7 +5,7 @@ using UnityEngine;
 public class scr_meteoro_padrao : MonoBehaviour
 {
     public float velocidade, vida, dano;
-    private float velocidade_rotacao;
+    private float velocidade_rotacao, tamanho_vertical, tamanho_horizontal;
     private int sinal;
     private Camera cam;
     private Vector3 direcao;
@@ -22,14 +22,12 @@ public class scr_meteoro_padrao : MonoBehaviour
         direcao = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), transform.position.z).normalized;
         sinal = Random.Range(0, 2) == 0 ? -1 : 1;
         cam = Camera.main;
+        tamanho_vertical = cam.orthographicSize;
+        tamanho_horizontal = tamanho_vertical * cam.aspect;
     }
 
     public void Estado_padrao()
     {
-        
-
-        float tamanho_vertical = cam.orthographicSize;
-        float tamanho_horizontal = tamanho_vertical * cam.aspect;
         Vector3 nova_posicao = Meteoro_padrao.transform.position;
 
         if (transform.position.x > tamanho_horizontal)

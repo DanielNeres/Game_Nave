@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7600120505662349037}
   - component: {fileID: 7849843793361265771}
-  - component: {fileID: 1777439276526254985}
   - component: {fileID: 2471112481248687787}
   - component: {fileID: 9054567308338830454}
   - component: {fileID: -8249502489745426015}
   - component: {fileID: -3833506046348395254}
+  - component: {fileID: 698621414342172088}
   m_Layer: 0
   m_Name: meteoro_G
   m_TagString: meteoro
@@ -89,41 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &1777439276526254985
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5372832278322938250}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.004386246, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.17980224
 --- !u!50 &2471112481248687787
 Rigidbody2D:
   serializedVersion: 4
@@ -361,3 +326,63 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!60 &698621414342172088
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5372832278322938250}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.48, y: 0.48}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.18479036, y: 0.120379195}
+      - {x: 0.1825614, y: 0.19123483}
+      - {x: 0.08643389, y: 0.12775326}
+      - {x: 0.035177708, y: 0.17858815}
+      - {x: -0.026197948, y: 0.16178654}
+      - {x: -0.10549416, y: 0.08558883}
+      - {x: -0.14408657, y: -0.021501789}
+      - {x: -0.12958072, y: -0.09610279}
+      - {x: -0.16680956, y: -0.10945296}
+      - {x: -0.19629215, y: -0.13558906}
+      - {x: -0.09619747, y: -0.18939136}
+      - {x: -0.052110426, y: -0.19399188}
+      - {x: 0.07549368, y: -0.09018959}
+      - {x: 0.14416218, y: -0.017949104}
+      - {x: 0.17558883, y: 0.017604817}
+  m_UseDelaunayMesh: 0
